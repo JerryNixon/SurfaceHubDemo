@@ -92,7 +92,9 @@ namespace WindowsApp
 
 
             //private const string EPOCH = epoch.ToString();
-            string API_HOST = "https://api.yelp.com/v2/search/?limit=8&term=Mexican";
+            string API_HOST = "https://api.yelp.com/v2/search/?limit=8&term=";
+
+            string TERM = searchInput.Text;
 
             string LOCATION = "&location=SoMa, San Francisco, CA&oauth_consumer_key=dbAVGSsFOrg-Miiuyt0RDA&oauth_timestamp=";
 
@@ -100,7 +102,7 @@ namespace WindowsApp
 
             string AUTH = "&oauth_signature_method=HMAC-SHA1&oauth_version=1.0&oauth_nonce=24746357509124828851479013443&oauth_token=KCxOhG7HEHe7a6-GKo1uctxeqqmwyEM3&oauth_signature=565WzSxF7shDIAL3hCxPYywkISU=";
 
-            string urlAddress = API_HOST + LOCATION + EPOCH_TIME + AUTH;
+            string urlAddress = API_HOST + TERM + LOCATION + EPOCH_TIME + AUTH;
 
             if (!Helpers.TryGetUri(urlAddress, out resourceAddress))
             {
