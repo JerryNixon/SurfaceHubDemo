@@ -9,5 +9,10 @@ namespace WindowsApp.Views
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(YelpPage));
+        }
     }
 }
