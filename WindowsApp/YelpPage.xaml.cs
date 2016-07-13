@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
-using Windows.Data.Json;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Globalization;
@@ -19,6 +21,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+
 
 
 
@@ -54,9 +57,8 @@ namespace WindowsApp
             this.InitializeComponent();
         }
 
-        private async void searchYelp_Click(object sender, RoutedEventArgs e)
+        private async void ZamatoAPICall()
         {
-
             // Create a client
             HttpClient httpClient = new HttpClient();
 
@@ -78,26 +80,92 @@ namespace WindowsApp
             HttpResponseMessage response = await httpClient.SendAsync(requestMessage);
 
             // Just as an example I'm turning the response into a string here
-            var responseAsString = await response.Content.ReadAsStringAsync();
+            string responseAsString = await response.Content.ReadAsStringAsync();
+            //OutputField.Text = responseAsString;
 
+            Restaurant2 restaurant2 = JsonConvert.DeserializeObject<Restaurant2>(responseAsString);
 
+           
 
-            JsonArray root = JsonValue.Parse("[" + responseAsString + "]").GetArray();
-            //for (uint i = 0; i < root.count; i++)
-            //{
-            //    string name1 = root.getobjectat(i).getnamedstring("name");
-            //    string description1 = root.getobjectat(i).getnamedstring("description");
-            //    string link1 = root.getobjectat(i).getnamedstring("link");
-            //    string cat1 = root.getobjectat(i).getnamedstring("cat");
-            //    string image1 = root.getobjectat(i).getnamedstring("image");
+            OutputField.Text = restaurant2.name.ToString();
 
-
-
-
-
-            //}
-        
         }
 
+
+        private void searchYelp_Click(object sender, RoutedEventArgs e)
+        {
+            ZamatoAPICall();   
+        }
+
+        private void searchInput_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter)
+                ZamatoAPICall();
+        }
+
+
+        
+        public class R
+        {
+            public int res_id { get; set; }
+        }
+
+        public class Location
+        {
+            public string address { get; set; }
+            public string locality { get; set; }
+            public string city { get; set; }
+            public int city_id { get; set; }
+            public string latitude { get; set; }
+            public string longitude { get; set; }
+            public string zipcode { get; set; }
+            public int country_id { get; set; }
+        }
+
+        public class UserRating
+        {
+            public string aggregate_rating { get; set; }
+            public string rating_text { get; set; }
+            public string rating_color { get; set; }
+            public string votes { get; set; }
+        }
+
+        public class Restaurant2
+        {
+            public R R { get; set; }
+            public string apikey { get; set; }
+            public string id { get; set; }
+            public string name { get; set; }
+            public string url { get; set; }
+            public Location location { get; set; }
+            public string cuisines { get; set; }
+            public int average_cost_for_two { get; set; }
+            public int price_range { get; set; }
+            public string currency { get; set; }
+            public List<object> offers { get; set; }
+            public string thumb { get; set; }
+            public UserRating user_rating { get; set; }
+            public string photos_url { get; set; }
+            public string menu_url { get; set; }
+            public string featured_image { get; set; }
+            public int has_online_delivery { get; set; }
+            public int is_delivering_now { get; set; }
+            public string deeplink { get; set; }
+            public string events_url { get; set; }
+            public List<object> establishment_types { get; set; }
+        }
+
+        public class Restaurant
+        {
+            public Restaurant2 restaurant { get; set; }
+        }
+
+        public class RootObject
+        {
+            public int results_found { get; set; }
+            public int results_start { get; set; }
+            public int results_shown { get; set; }
+            public List<Restaurant> restaurants { get; set; }
+        }
     }
 }

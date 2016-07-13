@@ -12,7 +12,7 @@
             <ColumnDefinition Width="961*"/>
             <ColumnDefinition Width="959*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="searchInput" HorizontalAlignment="Left" Height="53" Margin="43,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="566" PlaceholderText="Find: Mexican, Chinese, Burgers" FontSize="24" Foreground="DarkGreen" Background="Black"/>
+        <TextBox x:Name="searchInput" HorizontalAlignment="Left" Height="53" Margin="43,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="566" PlaceholderText="Find: Mexican, Chinese, Burgers" FontSize="24" Foreground="DarkGreen" Background="Black" KeyDown="searchInput_KeyDown"/>
         <Button x:Name="button_Search" Content="Search" HorizontalAlignment="Left" Height="53" Margin="626,104,0,0" VerticalAlignment="Top" Width="153" Click="searchYelp_Click" FontSize="24"/>
         <TextBox x:Name="OutputField" HorizontalAlignment="Left" Height="764" Margin="43,253,0,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="566"/>
 
