@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using Windows.Data.Json;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Globalization;
@@ -59,8 +60,16 @@ namespace WindowsApp
             // Create a client
             HttpClient httpClient = new HttpClient();
 
+            string ZOMATO_API = "https://developers.zomato.com/api/v2.1/search?q=";
+
+            string CUISINE_TYPE = searchInput.Text;
+
+            string LOCATION = "&count=8&lat=37.784627&lon=-122.398458&radius=1600&sort=rating";
+
+            string ZOMATO_URL = ZOMATO_API + CUISINE_TYPE + LOCATION;
+
             // Add a new Request Message
-            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Put, "https://developers.zomato.com/api/v2.1/search?q=Chinese&count=8&lat=37.784627&lon=-122.398458&radius=1600&sort=rating");
+            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Put, ZOMATO_URL);
             // Add our custom headers
             requestMessage.Headers.Add("user-key", "d22a78b458553d4677780d0d8e287df9");
             requestMessage.Headers.Add("Accept", "application/json");
@@ -69,8 +78,25 @@ namespace WindowsApp
             HttpResponseMessage response = await httpClient.SendAsync(requestMessage);
 
             // Just as an example I'm turning the response into a string here
-            string responseAsString = await response.Content.ReadAsStringAsync();
-            OutputField.Text = responseAsString;
+            var responseAsString = await response.Content.ReadAsStringAsync();
+
+
+
+            JsonArray root = JsonValue.Parse("[" + responseAsString + "]").GetArray();
+            //for (uint i = 0; i < root.count; i++)
+            //{
+            //    string name1 = root.getobjectat(i).getnamedstring("name");
+            //    string description1 = root.getobjectat(i).getnamedstring("description");
+            //    string link1 = root.getobjectat(i).getnamedstring("link");
+            //    string cat1 = root.getobjectat(i).getnamedstring("cat");
+            //    string image1 = root.getobjectat(i).getnamedstring("image");
+
+
+
+
+
+            //}
+        
         }
 
     }
