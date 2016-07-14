@@ -41,16 +41,6 @@ namespace WindowsApp
     {
         //MainPage rootPage = MainPage.Current;
 
-        private HttpClient httpClient;
-        
-
-
-        
-
-
-
-
-
 
         public YelpPage()
         {
@@ -79,16 +69,15 @@ namespace WindowsApp
             // Send the request to the server
             HttpResponseMessage response = await httpClient.SendAsync(requestMessage);
 
-            // Just as an example I'm turning the response into a string here
+       
             string responseAsString = await response.Content.ReadAsStringAsync();
             //OutputField.Text = responseAsString;
 
-            Restaurant2 restaurant2 = JsonConvert.DeserializeObject<Restaurant2>(responseAsString);
+            RootObject rootObject = JsonConvert.DeserializeObject<RootObject>(responseAsString);
 
-           
 
-            OutputField.Text = restaurant2.name.ToString();
 
+            OutputField.Text = rootObject.restaurants[0].restaurant.name;
         }
 
 
