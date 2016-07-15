@@ -20,12 +20,8 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-
-
-
-
-
 
 
 
@@ -58,7 +54,7 @@ namespace WindowsApp
 
             string LOCATION = "&count=8&lat=37.784627&lon=-122.398458&radius=1600&sort=rating";
 
-            string ZOMATO_URL = ZOMATO_API + CUISINE_TYPE + LOCATION;
+            string ZOMATO_URL = ZOMATO_API + CUISINE_TYPE.Replace(" ", "%20") + LOCATION;
 
             // Add a new Request Message
             HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Put, ZOMATO_URL);
@@ -77,7 +73,17 @@ namespace WindowsApp
 
 
 
-            OutputField.Text = rootObject.restaurants[0].restaurant.name;
+            //name0.Text = "Name: " + rootObject.restaurants[0].restaurant.name;
+            //address0.Text = rootObject.restaurants[0].restaurant.location.address;
+            image0.Source = new BitmapImage(new Uri(rootObject.restaurants[0].restaurant.thumb, UriKind.Absolute));
+            image1.Source = new BitmapImage(new Uri(rootObject.restaurants[1].restaurant.thumb, UriKind.Absolute));
+            image2.Source = new BitmapImage(new Uri(rootObject.restaurants[2].restaurant.thumb, UriKind.Absolute));
+            image3.Source = new BitmapImage(new Uri(rootObject.restaurants[3].restaurant.thumb, UriKind.Absolute));
+            image4.Source = new BitmapImage(new Uri(rootObject.restaurants[4].restaurant.thumb, UriKind.Absolute));
+            image5.Source = new BitmapImage(new Uri(rootObject.restaurants[5].restaurant.thumb, UriKind.Absolute));
+            image6.Source = new BitmapImage(new Uri(rootObject.restaurants[6].restaurant.thumb, UriKind.Absolute));
+            image7.Source = new BitmapImage(new Uri(rootObject.restaurants[7].restaurant.thumb, UriKind.Absolute));
+
         }
 
 

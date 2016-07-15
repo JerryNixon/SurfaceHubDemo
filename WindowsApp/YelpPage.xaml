@@ -9,12 +9,24 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="961*"/>
-            <ColumnDefinition Width="959*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="searchInput" HorizontalAlignment="Left" Height="53" Margin="43,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="566" PlaceholderText="Find: Mexican, Chinese, Burgers" FontSize="24" Foreground="DarkGreen" Background="Black" KeyDown="searchInput_KeyDown"/>
-        <Button x:Name="button_Search" Content="Search" HorizontalAlignment="Left" Height="53" Margin="626,104,0,0" VerticalAlignment="Top" Width="153" Click="searchYelp_Click" FontSize="24"/>
-        <TextBox x:Name="OutputField" HorizontalAlignment="Left" Height="764" Margin="43,253,0,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="566"/>
+        <TextBox x:Name="searchInput" Margin="100,0,0,50" TextWrapping="Wrap" Text="" PlaceholderText="Find: Mexican, Chinese, Burgers" FontSize="24" Foreground="DarkGreen" Background="Black" KeyDown="searchInput_KeyDown" HorizontalAlignment="Left" Width="435" Height="53" VerticalAlignment="Bottom"/>
+        <Button x:Name="button_Search" Content="Search" HorizontalAlignment="Left" Height="53" Margin="585,0,0,50" VerticalAlignment="Bottom" Width="167" Click="searchYelp_Click" FontSize="24"/>
+        <Image x:Name="image0" Margin="100,50,0,0" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="100" Margin="100,300,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="image2" HorizontalAlignment="Left" Height="100" Margin="100,550,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="image3" HorizontalAlignment="Left" Height="100" Margin="100,800,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="image4" HorizontalAlignment="Left" Height="100" Margin="490,50,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="image5" HorizontalAlignment="Left" Height="100" Margin="490,300,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="image6" HorizontalAlignment="Left" Height="100" Margin="490,550,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="image7" HorizontalAlignment="Left" Height="100" Margin="490,800,0,0" VerticalAlignment="Top" Width="100"/>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="200,50,0,0" VerticalAlignment="Top" Width="290">
+            <TextBox x:Name="name0" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" />
+            <TextBox x:Name="address0" Height="30" TextWrapping="Wrap" FontSize="12" />
+            <TextBox x:Name="" Height="21" TextWrapping="Wrap"/>
+        </StackPanel>
 
     </Grid>
 </Page>
