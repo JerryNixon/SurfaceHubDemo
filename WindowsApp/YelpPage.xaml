@@ -10,7 +10,8 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="451*"/>
+            <ColumnDefinition Width="389*"/>
         </Grid.ColumnDefinitions>
         <TextBox x:Name="searchInput" Margin="100,0,0,50" TextWrapping="Wrap" Text="" PlaceholderText="Find: Mexican, Chinese, Burgers" FontSize="24" Foreground="DarkGreen" Background="Black" KeyDown="searchInput_KeyDown" HorizontalAlignment="Left" Width="435" Height="53" VerticalAlignment="Bottom"/>
         <Button x:Name="button_Search" Content="Search" HorizontalAlignment="Left" Height="53" Margin="585,0,0,50" VerticalAlignment="Bottom" Width="167" Click="searchYelp_Click" FontSize="24"/>
@@ -23,9 +24,44 @@
         <Image x:Name="image6" HorizontalAlignment="Left" Height="100" Margin="490,550,0,0" VerticalAlignment="Top" Width="100"/>
         <Image x:Name="image7" HorizontalAlignment="Left" Height="100" Margin="490,800,0,0" VerticalAlignment="Top" Width="100"/>
         <StackPanel HorizontalAlignment="Left" Height="100" Margin="200,50,0,0" VerticalAlignment="Top" Width="290">
-            <TextBox x:Name="name0" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" />
-            <TextBox x:Name="address0" Height="30" TextWrapping="Wrap" FontSize="12" />
-            <TextBox x:Name="" Height="21" TextWrapping="Wrap"/>
+            <TextBlock x:Name="name0" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" />
+            <TextBlock x:Name="address0" Height="30" TextWrapping="Wrap" FontSize="12" />
+            <TextBlock x:Name="average_cost_for_two0" Height="21" TextWrapping="Wrap" FontSize="12"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="200,300,0,0" VerticalAlignment="Top" Width="290">
+            <TextBlock x:Name="name1" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" />
+            <TextBlock x:Name="address1" Height="30" TextWrapping="Wrap" FontSize="12" />
+            <TextBlock x:Name="average_cost_for_two1" Height="21" TextWrapping="Wrap" FontSize="12"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="200,550,0,0" VerticalAlignment="Top" Width="290">
+            <TextBlock x:Name="name2" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" />
+            <TextBlock x:Name="address2" Height="30" TextWrapping="Wrap" FontSize="12" />
+            <TextBlock x:Name="average_cost_for_two2" Height="21" TextWrapping="Wrap" FontSize="12"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="200,800,0,0" VerticalAlignment="Top" Width="290">
+            <TextBlock x:Name="name3" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" />
+            <TextBlock x:Name="address3" Height="30" TextWrapping="Wrap" FontSize="12" />
+            <TextBlock x:Name="average_cost_for_two3" Height="21" TextWrapping="Wrap" FontSize="12"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="590,50,0,0" VerticalAlignment="Top" Width="290">
+            <TextBlock x:Name="name4" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" />
+            <TextBlock x:Name="address4" Height="30" TextWrapping="Wrap" FontSize="12" />
+            <TextBlock x:Name="average_cost_for_two4" Height="21" TextWrapping="Wrap" FontSize="12"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="590,300,0,0" VerticalAlignment="Top" Width="290">
+            <TextBlock x:Name="name5" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" />
+            <TextBlock x:Name="address5" Height="30" TextWrapping="Wrap" FontSize="12" />
+            <TextBlock x:Name="average_cost_for_two5" Height="21" TextWrapping="Wrap" FontSize="12"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="590,550,0,0" VerticalAlignment="Top" Width="290">
+            <TextBlock x:Name="name6" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" />
+            <TextBlock x:Name="address6" Height="30" TextWrapping="Wrap" FontSize="12" />
+            <TextBlock x:Name="average_cost_for_two6" Height="21" TextWrapping="Wrap" FontSize="12"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="590,800,0,0" VerticalAlignment="Top" Width="290">
+            <TextBlock x:Name="name7" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" />
+            <TextBlock x:Name="address7" Height="30" TextWrapping="Wrap" FontSize="12" />
+            <TextBlock x:Name="average_cost_for_two7" Height="21" TextWrapping="Wrap" FontSize="12"/>
         </StackPanel>
 
     </Grid>
