@@ -96,12 +96,17 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\EllipseInverseScaleConverter.cs" />
+    <Compile Include="Converters\EllipseScaleConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DataService.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="Models\Restaurant.cs" />
+    <Compile Include="Models\Restaurant2.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="YelpPage.xaml.cs">
+    <Compile Include="Views\YelpPage.xaml.cs">
       <DependentUpon>YelpPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -112,6 +117,8 @@
     <None Include="WindowsApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\MAP.png" />
+    <Content Include="Assets\SampleThumbnail.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -135,7 +142,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="YelpPage.xaml">
+    <Page Include="Views\YelpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
