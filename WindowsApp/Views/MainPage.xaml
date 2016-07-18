@@ -209,7 +209,9 @@
                 </ListView.ItemTemplate>
             </ListView>
         </RelativePanel>
-        <RelativePanel Grid.Column="3" Background="DarkBlue" />
+        <RelativePanel Grid.Column="3" Background="DarkBlue" >
+            <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="113" Margin="314,429,-467.667,-509.333" VerticalAlignment="Top" Width="219" Click="button2_Click"/>
+        </RelativePanel>
 
     </Grid>
 

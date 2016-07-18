@@ -34,19 +34,19 @@ namespace WindowsApp.ViewModels
         }
 
 
-        public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
-        {
-            // defaults
-            Price1Checked = true;
-            Price2Checked = true;
-            Star2Checked = true;
-            Star3Checked = true;
-            SelectedCuisine = "Indian";
-            Distance = 5;
-            await SearchAsync();
-        }
+        //public override async Task OnNavigatedToAsync(object parameter, navigationmode mode, idictionary<string, object> state)
+        //{
+        //    // defaults
+        //    price1checked = true;
+        //    price2checked = true;
+        //    star2checked = true;
+        //    star3checked = true;
+        //    selectedcuisine = "indian";
+        //    distance = 1;
+        //    await searchasync();
+        //}
 
-        async Task SearchAsync()
+        public async Task SearchAsync()
         {
             var source = _cancellationTokens.AddAndReturn(new CancellationTokenSource());
             await Task.Factory.StartNew(async () =>
@@ -69,7 +69,7 @@ namespace WindowsApp.ViewModels
 
         public ObservableCollection<Restaurant> Restaurants { get; } = new ObservableCollection<Restaurant>();
 
-        public string[] Cuisines => new[] { "Mexican", "American", "Chinese", "Indian", "Italian", "Korean", "Mexican", "American", "Chinese", "Indian", "Italian", "Korean" };
+        public string[] Cuisines => new[] { "American", "Mexican", "Chinese", "Indian", "Italian", "Pizza", "Sanwich", "Japanese", "Burger", "Sushi", "BBQ", "Seafood" };
 
         string _SelectedCuisine = default(string);
         public string SelectedCuisine { get { return _SelectedCuisine; } set { Set(ref _SelectedCuisine, value); } }

@@ -24,5 +24,7 @@ namespace WindowsApp.Views
             d.PrimaryButtonText = "Close";
             await d.ShowAsync();
         }
+
+        
     }
 }
