@@ -21,15 +21,13 @@ namespace WindowsApp.Models
             Stars = "***";
             Price = "$$$";
         }
-        public Restaurant(Restaurant2 restaurant)
-        {
 
-        }
+        public Restaurant2 restaurant { get; set; }
+
         public string Name { get; set; }
         public string Thumbnail { get; set; }
         public string Distance { get; set; }
         public string Stars { get; set; }
         public string Price { get; set; }
     }
-
 }

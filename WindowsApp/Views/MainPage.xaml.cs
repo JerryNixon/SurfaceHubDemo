@@ -1,6 +1,10 @@
 using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using WindowsApp.ViewModels;
+using Windows.UI.Xaml.Navigation;
+using System.Collections.ObjectModel;
+
 
 namespace WindowsApp.Views
 {
@@ -9,6 +13,7 @@ namespace WindowsApp.Views
         public MainPage()
         {
             InitializeComponent();
+            NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
         }
 
         private void button2_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)

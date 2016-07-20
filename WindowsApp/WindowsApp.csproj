@@ -98,6 +98,10 @@
     </Compile>
     <Compile Include="Converters\EllipseInverseScaleConverter.cs" />
     <Compile Include="Converters\EllipseScaleConverter.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\R.cs" />
+    <Compile Include="Models\RootObject.cs" />
+    <Compile Include="Models\UserRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DataService.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
