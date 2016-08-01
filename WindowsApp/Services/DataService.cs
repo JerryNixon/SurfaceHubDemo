@@ -20,8 +20,9 @@ namespace WindowsApp.Services
 {
     public class DataService
     {
-        public async Task<RootObject> GetRestaurantsAsync()
+        public async Task<IEnumerable<Models.Restaurant>> GetReataurantsAsync()
         {
+          
             // Create a client
             HttpClient httpClient = new HttpClient();
 
@@ -51,9 +52,17 @@ namespace WindowsApp.Services
 
             RootObject rootObject = null;
 
+
+
             rootObject = JsonConvert.DeserializeObject<RootObject>(responseAsString);
+
+
+
             await Task.CompletedTask;
-            return rootObject;
+
+           
+
+            return Enumerable.Range(1, 10).Select(x => new Models.Restaurant(x) { Name = Guid.NewGuid().ToString() });
         }
     }
 }

@@ -15,14 +15,20 @@ namespace WindowsApp.Models
     {
         public Restaurant(int sampleIndex)
         {
-            Name = $"Restaurant {sampleIndex}";
+           // Name = $"Restaurant {sampleIndex}";
             Distance = $"Only {sampleIndex} miles away";
-            Thumbnail = "ms-appx:///Assets/SampleThumbnail.jpg";
+           // Thumbnail = "ms-appx:///Assets/SampleThumbnail.jpg";
             Stars = "***";
             Price = "$$$";
         }
 
-        public Restaurant2 restaurant { get; set; }
+
+
+        public Restaurant(Restaurant2 restaurant)
+        {
+            Name = restaurant.name;
+            Thumbnail = restaurant.thumb;
+        }
 
         public string Name { get; set; }
         public string Thumbnail { get; set; }

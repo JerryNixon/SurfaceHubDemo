@@ -9,6 +9,7 @@ using System.Threading;
 using Template10.Utils;
 using Template10.Common;
 using Windows.UI.Xaml.Navigation;
+using System.Runtime.CompilerServices;
 
 namespace WindowsApp.ViewModels
 {
@@ -21,7 +22,7 @@ namespace WindowsApp.ViewModels
         {
             if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
             {
-                Restaurants.AddRange(Enumerable.Range(1, 8).Select(x => new Restaurant.Restraunt2.name(x)));
+                Restaurants.AddRange(Enumerable.Range(1, 10).Select(x => new Restaurant(x)));
             }
             else
             {
@@ -53,13 +54,13 @@ namespace WindowsApp.ViewModels
             await Task.Factory.StartNew(async () =>
             {
                 // TODO: convert distance number to kilos
-                var restaurants = await _dataService.GetRetaurantsAsync();
+                var restaurants = await _dataService.GetReataurantsAsync();
                 if (!source.Token.IsCancellationRequested)
                 {
                     DispatcherWrapper.Current().Dispatch(() =>
                     {
                         Restaurants.Clear();
-                        foreach (var restaurant in Restaurant2)
+                        foreach (var restaurant in restaurants)
                         {
                             Restaurants.Add(restaurant);
                         }
@@ -69,6 +70,7 @@ namespace WindowsApp.ViewModels
         }
 
         public ObservableCollection<Restaurant> Restaurants { get; } = new ObservableCollection<Restaurant>();
+
 
         public string[] Cuisines => new[] { "American", "Mexican", "Chinese", "Indian", "Italian", "Pizza", "Sanwich", "Japanese", "Burger", "Sushi", "BBQ", "Seafood" };
 
