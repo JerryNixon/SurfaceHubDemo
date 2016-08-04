@@ -11,6 +11,7 @@ using Template10.Common;
 using Windows.UI.Xaml.Navigation;
 using System.Runtime.CompilerServices;
 
+
 namespace WindowsApp.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
@@ -20,19 +21,19 @@ namespace WindowsApp.ViewModels
 
         public MainPageViewModel()
         {
-            if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
-            {
-                Restaurants.AddRange(Enumerable.Range(1, 10).Select(x => new Restaurant(x)));
-            }
-            else
-            {
+            //if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
+            //{
+            //   Restaurants.AddRange(Enumerable.Range(1, 8).Select(x => new Restaurant()));
+            //}
+            //else
+            //{
                 _dataService = new Services.DataService();
                 PropertyChanged += async (s, e) =>
                 {
                     _cancellationTokens.ForEach(x => x.Cancel());
                     await SearchAsync();
                 };
-            }
+            
         }
 
 
@@ -51,10 +52,10 @@ namespace WindowsApp.ViewModels
         public async Task SearchAsync()
         {
             var source = _cancellationTokens.AddAndReturn(new CancellationTokenSource());
-            await Task.Factory.StartNew(async () =>
+            await Task.Factory.StartNew(() =>
             {
                 // TODO: convert distance number to kilos
-                var restaurants = await _dataService.GetReataurantsAsync();
+                var restaurants = _dataService.listOfRestaurants().Result;
                 if (!source.Token.IsCancellationRequested)
                 {
                     DispatcherWrapper.Current().Dispatch(() =>

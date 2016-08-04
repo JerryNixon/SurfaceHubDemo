@@ -10,12 +10,12 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="451*"/>
-            <ColumnDefinition Width="389*"/>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="319*"/>
         </Grid.ColumnDefinitions>
 
         <TextBox x:Name="searchInput" Margin="100,0,0,50" TextWrapping="Wrap" Text="" PlaceholderText="Find: Mexican, Chinese, Burgers" FontSize="24" Foreground="DarkGreen" Background="Black" KeyDown="searchInput_KeyDown" HorizontalAlignment="Left" Width="435" Height="53" VerticalAlignment="Bottom"/>
-        <Button x:Name="button_Search" Content="Search" HorizontalAlignment="Left" Height="53" Margin="585,0,0,50" VerticalAlignment="Bottom" Width="167" Click="searchYelp_Click" FontSize="24"/>
+        <Button x:Name="button_Search" Content="Search" HorizontalAlignment="Left" Height="53" Margin="585,0,0,50" VerticalAlignment="Bottom" Width="167" Click="searchYelp_Click" FontSize="24" Foreground="DarkGreen"/>
 
         <Image x:Name="image0" Margin="100,50,0,0" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
 
@@ -27,7 +27,7 @@
         <Image x:Name="image6" HorizontalAlignment="Left" Height="100" Margin="490,550,0,0" VerticalAlignment="Top" Width="100"/>
         <Image x:Name="image7" HorizontalAlignment="Left" Height="100" Margin="490,800,0,0" VerticalAlignment="Top" Width="100"/>
         <StackPanel HorizontalAlignment="Left" Height="100" Margin="200,50,0,0" VerticalAlignment="Top" Width="290">
-            <TextBlock x:Name="name0" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" />
+            <TextBlock x:Name="name0" Height="39" TextWrapping="Wrap" FontSize="24" Foreground="DarkGreen" Tapped="name0_Tapped" />
             <TextBlock x:Name="address0" Height="30" TextWrapping="Wrap" FontSize="12" />
             <TextBlock x:Name="average_cost_for_two0" Height="21" TextWrapping="Wrap" FontSize="12"/>
         </StackPanel>
@@ -66,7 +66,12 @@
             <TextBlock x:Name="address7" Height="30" TextWrapping="Wrap" FontSize="12" />
             <TextBlock x:Name="average_cost_for_two7" Height="21" TextWrapping="Wrap" FontSize="12"/>
         </StackPanel>
-        <TextBlock x:Name="resultsNum" Height="40" Margin="100,0,345,10" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" d:LayoutOverrides="LeftPosition, RightPosition"/>
+        <TextBlock x:Name="resultsNum" Height="40" Margin="100,0,345,10" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom"/>
+        <Button x:Name="button" Content="SPIN" Grid.Column="2" HorizontalAlignment="Left" Height="112" Margin="142.333,767,0,0" VerticalAlignment="Top" Width="452" FontSize="72" Foreground="DarkGreen" Click="Spin_Click"/>
+        <Image x:Name="imageslot1" Grid.Column="2" HorizontalAlignment="Left" Height="200" Margin="24.333,450,0,0" VerticalAlignment="Top" Width="200"/>
+        <Image x:Name="imageslot2" Grid.Column="2" HorizontalAlignment="Left" Height="200" Margin="250.333,450,0,0" VerticalAlignment="Top" Width="200"/>
+        <Image x:Name="imageslot3" Grid.Column="2" HorizontalAlignment="Left" Height="200" Margin="491.333,450,0,0" VerticalAlignment="Top" Width="200"/>
+        <TextBlock x:Name="testnum" Grid.Column="2" HorizontalAlignment="Left" Height="71" Margin="142.333,884,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="452"/>
 
     </Grid>
 </Page>

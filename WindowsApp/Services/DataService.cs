@@ -22,7 +22,15 @@ namespace WindowsApp.Services
     {
         public async Task<IEnumerable<Models.Restaurant>> GetReataurantsAsync()
         {
-          
+
+            var rootObject = ZomatoAPICall().Result;
+            await Task.CompletedTask;
+            return Enumerable.Range(0, 1).Select(x => new Models.Restaurant(rootObject.restaurants[x].restaurant) { Name = Guid.NewGuid().ToString() });
+        }
+
+        public async Task<RootObject> ZomatoAPICall()
+        {
+
             // Create a client
             HttpClient httpClient = new HttpClient();
 
@@ -60,9 +68,18 @@ namespace WindowsApp.Services
 
             await Task.CompletedTask;
 
-           
 
-            return Enumerable.Range(1, 10).Select(x => new Models.Restaurant(x) { Name = Guid.NewGuid().ToString() });
+
+            return rootObject;
+        }
+
+        public async Task<List<Restaurant>> listOfRestaurants()
+        {
+            var serchResults = ZomatoAPICall().Result;
+
+            await Task.CompletedTask;
+
+            return serchResults.restaurants;
         }
     }
 }

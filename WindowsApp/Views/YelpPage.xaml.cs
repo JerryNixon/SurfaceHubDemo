@@ -188,11 +188,7 @@ namespace WindowsApp
                 resultsNum.Text = "";
             }
 
-
-
         }
-
-        
 
 
         private void searchYelp_Click(object sender, RoutedEventArgs e)
@@ -272,6 +268,26 @@ namespace WindowsApp
             public List<Restaurant> restaurants { get; set; }
         }
 
+        private async void name0_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            string uriToLaunch = @"http://www.bing.com";
+            var uri = new Uri(uriToLaunch);
 
+            await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
+
+        private void Spin_Click(object sender, RoutedEventArgs e)
+        {
+            randNum();
+        }
+
+
+        private void randNum()
+        {
+            Random rnd = new Random();
+            float Random = rnd.Next(3, 10);
+
+            testnum.Text = Random.ToString();
+        }
     }
 }
