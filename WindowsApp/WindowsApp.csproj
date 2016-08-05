@@ -122,6 +122,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\MAP.png" />
+    <Content Include="Assets\Matrix0.PNG" />
+    <Content Include="Assets\Matrix1.PNG" />
     <Content Include="Assets\SampleThumbnail.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

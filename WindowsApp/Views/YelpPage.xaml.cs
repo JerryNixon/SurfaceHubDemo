@@ -278,16 +278,17 @@ namespace WindowsApp
 
         private void Spin_Click(object sender, RoutedEventArgs e)
         {
-            randNum();
+            randomNumber();
         }
 
 
-        private void randNum()
+        private void randomNumber()
         {
-            Random rnd = new Random();
-            float Random = rnd.Next(3, 10);
+            Random randomNum = new Random();
+            float Random = randomNum.Next(300, 500);
+            float randomTime = ((Random/100));
 
-            testnum.Text = Random.ToString();
+            testnum.Text = randomTime.ToString();
         }
     }
 }

@@ -28,8 +28,9 @@ namespace WindowsApp.Models
         {
             Name = restaurant.name;
             Thumbnail = restaurant.thumb;
+           
         }
-        
+
         public Restaurant2 restaurant { get; set; }
     
         public string Name { get; set; }

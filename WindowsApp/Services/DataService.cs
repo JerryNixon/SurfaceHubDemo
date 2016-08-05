@@ -37,7 +37,7 @@ namespace WindowsApp.Services
 
             string ZOMATO_API = "https://developers.zomato.com/api/v2.1/search?q=";
 
-            string CUISINE_TYPE = "Mexican";
+            string CUISINE_TYPE = "Chinese";
 
             string LOCATION = "&count=8&lat=37.784627&lon=-122.398458&radius=1600&sort=rating";
 
